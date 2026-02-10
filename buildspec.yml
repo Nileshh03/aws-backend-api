@@ -2,12 +2,15 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      nodejs: 18
+    commands:
+      - curl -fsSL https://rpm.nodesource.com/setup_24.x | bash -
+      - yum install -y nodejs
+      - node -v
+      - npm -v
   build:
     commands:
-      - npm install
+      - npm ci || npm install
+
 artifacts:
   files:
     - '**/*'
-  base-directory: .
