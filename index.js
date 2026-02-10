@@ -4,7 +4,7 @@ const app = express();
 // Health check endpoint (VERY IMPORTANT for EB)
 app.get("/health", (req, res) => {
     console.log("helo");
-  res.status(200).json({ status: "UP" });
+  res.status(200).json({ status: "running api" });
 });
 
 // Sample API endpoint
